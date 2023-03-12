@@ -1,0 +1,33 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogStream",
+                "logs:PutLogEvents",
+                "logs:CreateLogGroup"
+            ],
+            "Resource": "arn:aws:logs:*:*:*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "mobiletargeting:SendMessages",
+            "Resource": "arn:aws:mobiletargeting:us-east-2:{account-id}:apps/{pinpoint-project-id}/*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "mobiletargeting:GetEndpoint",
+                "mobiletargeting:UpdateEndpoint",
+                "mobiletargeting:PutEvents"
+            ],
+            "Resource": "arn:aws:mobiletargeting:us-east-2:{account-id}:apps/{pinpoint-project-id}/endpoints/*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "mobiletargeting:PhoneNumberValidate",
+            "Resource": "arn:aws:mobiletargeting:us-east-2:{account-id}:phone/number/validate"
+        }
+    ]
+}
